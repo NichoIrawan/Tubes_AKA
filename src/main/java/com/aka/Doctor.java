@@ -41,4 +41,9 @@ public class Doctor {
     public void removeDaysUnavailable(Day dayUnavailable) {
         this.daysUnavailable.remove(dayUnavailable);
     }
+
+    @Override
+    public String toString() {
+        return String.format("[Nama] %s\n", name);
+    }
 }
