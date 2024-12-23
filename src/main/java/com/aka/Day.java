@@ -12,6 +12,7 @@ public class Day {
     public void setShiftIterative(int from, int to, Doctor doctor) {
         for (int i = from; i < to; i++) {
             shift[i] = doctor;
+            doctor.weeklyWorkHour--;
         }
         doctor.shift.add(this);
     }
@@ -19,6 +20,7 @@ public class Day {
     public void setShiftRecursive(int from, int to, Doctor doctor) {
         if (from < to) {
             shift[from] = doctor;
+            doctor.weeklyWorkHour--;
             if (from + 1 == to) {
                 doctor.shift.add(this);
             }
