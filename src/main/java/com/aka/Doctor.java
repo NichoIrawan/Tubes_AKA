@@ -44,6 +44,10 @@ public class Doctor {
 
     @Override
     public String toString() {
-        return String.format("[Nama] %s\n", name);
+        String s = String.format("[Nama] %s - [Shift] ", name);
+        for (Day day : shift) {
+            s = s + String.format("%s ", day.name);
+        }
+        return s + "\n";
     }
 }
