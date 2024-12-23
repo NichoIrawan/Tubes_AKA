@@ -11,25 +11,25 @@ public class Driver {
         doctors = new ArrayList<>();
 
         //Initialize days
-        days[0] = new Day("Monday");
-        days[1] = new Day("Tuesday");
-        days[2] = new Day("Wednesday");
-        days[3] = new Day("Thursday");
-        days[4] = new Day("Friday");
-        days[5] = new Day("Saturday");
-        days[6] = new Day("Sunday");
+        days[0] = new Day("Mon");
+        days[1] = new Day("Tue");
+        days[2] = new Day("Wed");
+        days[3] = new Day("Thu");
+        days[4] = new Day("Fri");
+        days[5] = new Day("Sat");
+        days[6] = new Day("Sun");
 
         //Initialize doctors
-        doctors.add(new Doctor(1, "Dr. A", 0, 8, 40));
-        doctors.add(new Doctor(2, "Dr. B", 0, 8, 40));
-        doctors.add(new Doctor(3, "Dr. C", 0, 8, 40));
-        doctors.add(new Doctor(4, "Dr. D", 8, 16, 40));
-        doctors.add(new Doctor(5, "Dr. E", 8, 16, 40));
-        doctors.add(new Doctor(6, "Dr. F", 8, 16, 40));
-        doctors.add(new Doctor(7, "Dr. G", 16, 23, 40));
-        doctors.add(new Doctor(8, "Dr. H", 16, 23, 40));
-        doctors.add(new Doctor(9, "Dr. I", 16, 23, 40));
-        doctors.add(new Doctor(10, "Dr. J", 0, 23, 40));
+        doctors.add(new Doctor(1, "Dr. A", 0, 8, 24));
+        doctors.add(new Doctor(2, "Dr. B", 0, 8, 24));
+        doctors.add(new Doctor(3, "Dr. C", 0, 8, 24));
+        doctors.add(new Doctor(4, "Dr. D", 8, 16, 24));
+        doctors.add(new Doctor(5, "Dr. E", 8, 16, 24));
+        doctors.add(new Doctor(6, "Dr. F", 8, 16, 24));
+        doctors.add(new Doctor(7, "Dr. G", 16, 23, 24));
+        doctors.add(new Doctor(8, "Dr. H", 16, 23, 24));
+        doctors.add(new Doctor(9, "Dr. I", 16, 23, 24));
+        doctors.add(new Doctor(10, "Dr. J", 0, 23, 24));
 
         //Doctor days unavailable
         doctors.getFirst().addDaysUnavailable(days[0]);
@@ -44,10 +44,10 @@ public class Driver {
         doctors.get(9).addDaysUnavailable(days[6]);
     }
 
-    public ArrayList<Doctor> groupingDoctors(Day day) {
+    public ArrayList<Doctor> groupingDoctors(Day day, int start, int end) {
         ArrayList<Doctor> doctors = new ArrayList<>();
         for (Doctor doctor : this.doctors) {
-            if (!(doctor.daysUnavailable.contains(day))) {
+            if (!(doctor.daysUnavailable.contains(day)) && doctor.workHourStart <= start && doctor.workHourEnd >= end - 1 ) {
                 doctors.add(doctor);
             }
         }
@@ -66,10 +66,10 @@ public class Driver {
     }
 
     public Doctor searchAvailableDoctorIterative (Day day, int start, int end) {
-        ArrayList<Doctor> doctors = groupingDoctors(day);
+        ArrayList<Doctor> doctors = groupingDoctors(day, start, end);
         int max = max(doctors);
         for (Doctor doctor : doctors) {
-            if (!(doctor.daysUnavailable.contains(day)) && doctor.workHourStart <= start && doctor.workHourEnd >= end && doctor.weeklyWorkHour == max) {
+            if (doctor.weeklyWorkHour == max) {
                 return doctor;
             }
         }
@@ -91,8 +91,9 @@ public class Driver {
         int workhour = 24 / Shift.values().length;
 
         for (Day day : days) {
-            for (int i = 0; i < 24; i+= workhour) {
-                Doctor doctor = searchAvailableDoctorIterative(day, i, i + workhour);
+            for (int i = 0; i < 24; i+=workhour) {
+                int end = i + workhour;
+                Doctor doctor = searchAvailableDoctorIterative(day, i, end);
                 if (doctor != null) {
                     day.setShiftIterative(i, i + workhour, doctor);
                 }

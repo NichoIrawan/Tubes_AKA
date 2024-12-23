@@ -20,8 +20,8 @@ public class Day {
     public void setShiftRecursive(int from, int to, Doctor doctor) {
         if (from < to) {
             shift[from] = doctor;
-            doctor.weeklyWorkHour--;
             if (from + 1 == to) {
+                doctor.weeklyWorkHour -= to - from;
                 doctor.shift.add(this);
             }
             setShiftRecursive(from + 1, to, doctor);
@@ -34,10 +34,10 @@ public class Day {
 
     @Override
     public String toString() {
-        String s = "[Nama] " + name;
+        String s = "[Hari] " + name + ": \t";
         for (int i = 0; i < 24; i++) {
             try {
-                s = s + String.format(" %s ", shift[i].getName());
+                s = s + String.format("%d %s | ", i, shift[i].getName());
             } catch (Exception e) {
                 System.out.println("Error" + i);
             }
