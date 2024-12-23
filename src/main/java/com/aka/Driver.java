@@ -94,9 +94,6 @@ public class Driver {
             for (int i = 0; i < 24; i+=workhour) {
                 int end = i + workhour;
                 Doctor doctor = searchAvailableDoctorIterative(day, i, end);
-//                ArrayList<Doctor> doctors =  groupingDoctors(day, i, end);
-//                int max = max(doctors);
-//                Doctor doctor = searchAvailableDoctorRecursive(day, doctors, 0, i, end - 1, max);
                 if (doctor != null) {
                     day.setShiftIterative(i, i + workhour, doctor);
                 }
@@ -104,8 +101,25 @@ public class Driver {
         }
     }
 
-    public void setShiftRecursive () {
+    public void setShiftRecursive (int dayIndex, int start, int end) {
+        int workHour = 24 / Shift.values().length;
 
+        if (dayIndex == days.length) {
+            return;
+        } else {
+            if (start == 24) {
+                setShiftRecursive(dayIndex + 1, 0, workHour);
+            } else {
+                ArrayList<Doctor> doctors =  groupingDoctors(days[dayIndex], start, end);
+                int max = max(doctors);
+
+                Doctor doctor = searchAvailableDoctorRecursive(days[dayIndex], doctors, 0, start, end - 1, max);
+                if (doctor != null) {
+                    days[dayIndex].setShiftRecursive(start, end, doctor);
+                }
+                setShiftRecursive(dayIndex, start + workHour, end + 24/Shift.values().length);
+            }
+        }
     }
 
     public void printDays() {
