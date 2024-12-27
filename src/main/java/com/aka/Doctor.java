@@ -17,7 +17,7 @@ public class Doctor {
         this.name = name;
         this.workHourStart = workHourStart;
         this.workHourEnd = workHourEnd;
-        this.maxWorkHour = 12;
+        this.maxWorkHour = 4;
         this.weeklyWorkHour = this.maxWorkHour;
         this.daysUnavailable = new ArrayList<>();
         this.shift = new ArrayList<>();

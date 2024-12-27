@@ -7,6 +7,7 @@ public class Driver {
     public ArrayList<Doctor> doctors;
 
     public void initialize() {
+//        days = new Day[500];
         days = new Day[7];
         doctors = new ArrayList<>();
 
@@ -19,6 +20,11 @@ public class Driver {
         days[5] = new Day("Sat");
         days[6] = new Day("Sun");
 
+        //testing Purpose
+//        for (int i = 7; i < days.length; i++) {
+//            days[i] = new Day(Integer.toString(i));
+//        }
+
         //Initialize doctors
         doctors.add(new Doctor(1, "Dr. A", 0, 8));
         doctors.add(new Doctor(2, "Dr. B", 0, 8));
@@ -30,16 +36,22 @@ public class Driver {
         doctors.add(new Doctor(8, "Dr. H", 16, 23));
         doctors.add(new Doctor(9, "Dr. I", 16, 23));
         doctors.add(new Doctor(10, "Dr. J", 0, 23));
-        doctors.add(new Doctor(11, "Dr. K", 0, 8 ));
-        doctors.add(new Doctor(12, "Dr. L", 0, 8));
-        doctors.add(new Doctor(13, "Dr. M", 8, 16));
-        doctors.add(new Doctor(14, "Dr. N", 8, 16));
-        doctors.add(new Doctor(15, "Dr. O", 16, 23));
-        doctors.add(new Doctor(16, "Dr. P", 16, 23));
-        doctors.add(new Doctor(17, "Dr. Q", 0, 8));
-        doctors.add(new Doctor(18, "Dr. R", 8, 16));
-        doctors.add(new Doctor(19, "Dr. S", 16, 23));
-        doctors.add(new Doctor(20, "Dr. T", 0, 23));
+
+        //testing purpose
+//        for (int i = 11; i < 1000000; i++) {
+//            doctors.add(new Doctor(i, "Dr. " + i, 0, 23));
+//        }
+
+//        doctors.add(new Doctor(11, "Dr. K", 0, 8 ));
+//        doctors.add(new Doctor(12, "Dr. L", 0, 8));
+//        doctors.add(new Doctor(13, "Dr. M", 8, 16));
+//        doctors.add(new Doctor(14, "Dr. N", 8, 16));
+//        doctors.add(new Doctor(15, "Dr. O", 16, 23));
+//        doctors.add(new Doctor(16, "Dr. P", 16, 23));
+//        doctors.add(new Doctor(17, "Dr. Q", 0, 8));
+//        doctors.add(new Doctor(18, "Dr. R", 8, 16));
+//        doctors.add(new Doctor(19, "Dr. S", 16, 23));
+//        doctors.add(new Doctor(20, "Dr. T", 0, 23));
 
 
         //Doctor days unavailable
@@ -84,45 +96,45 @@ public class Driver {
         doctors.get(9).addDaysUnavailable(days[5]);
         doctors.get(9).addDaysUnavailable(days[6]);
 
-        doctors.get(10).addDaysUnavailable(days[1]);
-        doctors.get(10).addDaysUnavailable(days[3]);
-        doctors.get(10).addDaysUnavailable(days[4]);
-
-        doctors.get(11).addDaysUnavailable(days[2]);
-        doctors.get(11).addDaysUnavailable(days[0]);
-        doctors.get(11).addDaysUnavailable(days[3]);
-
-        doctors.get(12).addDaysUnavailable(days[3]);
-        doctors.get(12).addDaysUnavailable(days[1]);
-        doctors.get(12).addDaysUnavailable(days[5]);
-
-        doctors.get(13).addDaysUnavailable(days[4]);
-        doctors.get(13).addDaysUnavailable(days[2]);
-        doctors.get(13).addDaysUnavailable(days[0]);
-
-        doctors.get(14).addDaysUnavailable(days[5]);
-        doctors.get(14).addDaysUnavailable(days[3]);
-        doctors.get(14).addDaysUnavailable(days[1]);
-
-        doctors.get(15).addDaysUnavailable(days[6]);
-        doctors.get(15).addDaysUnavailable(days[4]);
-        doctors.get(15).addDaysUnavailable(days[2]);
-
-        doctors.get(16).addDaysUnavailable(days[0]);
-        doctors.get(16).addDaysUnavailable(days[2]);
-        doctors.get(16).addDaysUnavailable(days[4]);
-
-        doctors.get(17).addDaysUnavailable(days[2]);
-        doctors.get(17).addDaysUnavailable(days[3]);
-        doctors.get(17).addDaysUnavailable(days[5]);
-
-        doctors.get(18).addDaysUnavailable(days[4]);
-        doctors.get(18).addDaysUnavailable(days[6]);
-        doctors.get(18).addDaysUnavailable(days[0]);
-
-        doctors.get(19).addDaysUnavailable(days[5]);
-        doctors.get(19).addDaysUnavailable(days[1]);
-        doctors.get(19).addDaysUnavailable(days[3]);
+//        doctors.get(10).addDaysUnavailable(days[1]);
+//        doctors.get(10).addDaysUnavailable(days[3]);
+//        doctors.get(10).addDaysUnavailable(days[4]);
+//
+//        doctors.get(11).addDaysUnavailable(days[2]);
+//        doctors.get(11).addDaysUnavailable(days[0]);
+//        doctors.get(11).addDaysUnavailable(days[3]);
+//
+//        doctors.get(12).addDaysUnavailable(days[3]);
+//        doctors.get(12).addDaysUnavailable(days[1]);
+//        doctors.get(12).addDaysUnavailable(days[5]);
+//
+//        doctors.get(13).addDaysUnavailable(days[4]);
+//        doctors.get(13).addDaysUnavailable(days[2]);
+//        doctors.get(13).addDaysUnavailable(days[0]);
+//
+//        doctors.get(14).addDaysUnavailable(days[5]);
+//        doctors.get(14).addDaysUnavailable(days[3]);
+//        doctors.get(14).addDaysUnavailable(days[1]);
+//
+//        doctors.get(15).addDaysUnavailable(days[6]);
+//        doctors.get(15).addDaysUnavailable(days[4]);
+//        doctors.get(15).addDaysUnavailable(days[2]);
+//
+//        doctors.get(16).addDaysUnavailable(days[0]);
+//        doctors.get(16).addDaysUnavailable(days[2]);
+//        doctors.get(16).addDaysUnavailable(days[4]);
+//
+//        doctors.get(17).addDaysUnavailable(days[2]);
+//        doctors.get(17).addDaysUnavailable(days[3]);
+//        doctors.get(17).addDaysUnavailable(days[5]);
+//
+//        doctors.get(18).addDaysUnavailable(days[4]);
+//        doctors.get(18).addDaysUnavailable(days[6]);
+//        doctors.get(18).addDaysUnavailable(days[0]);
+//
+//        doctors.get(19).addDaysUnavailable(days[5]);
+//        doctors.get(19).addDaysUnavailable(days[1]);
+//        doctors.get(19).addDaysUnavailable(days[3]);
 
     }
 
