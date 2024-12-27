@@ -20,8 +20,8 @@ public class Day {
     public void setShiftRecursive(int from, int to, Doctor doctor) {
         if (from < to) {
             shift[from] = doctor;
+            doctor.weeklyWorkHour--;
             if (from + 1 == to) {
-                doctor.weeklyWorkHour -= to - from;
                 doctor.shift.add(this);
             }
             setShiftRecursive(from + 1, to, doctor);

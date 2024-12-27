@@ -20,16 +20,16 @@ public class Driver {
         days[6] = new Day("Sun");
 
         //Initialize doctors
-        doctors.add(new Doctor(1, "Dr. A", 0, 8, 24));
-        doctors.add(new Doctor(2, "Dr. B", 0, 8, 24));
-        doctors.add(new Doctor(3, "Dr. C", 0, 8, 24));
-        doctors.add(new Doctor(4, "Dr. D", 8, 16, 24));
-        doctors.add(new Doctor(5, "Dr. E", 8, 16, 24));
-        doctors.add(new Doctor(6, "Dr. F", 8, 16, 24));
-        doctors.add(new Doctor(7, "Dr. G", 16, 23, 24));
-        doctors.add(new Doctor(8, "Dr. H", 16, 23, 24));
-        doctors.add(new Doctor(9, "Dr. I", 16, 23, 24));
-        doctors.add(new Doctor(10, "Dr. J", 0, 23, 24));
+        doctors.add(new Doctor(1, "Dr. A", 0, 8));
+        doctors.add(new Doctor(2, "Dr. B", 0, 8));
+        doctors.add(new Doctor(3, "Dr. C", 0, 8));
+        doctors.add(new Doctor(4, "Dr. D", 8, 16));
+        doctors.add(new Doctor(5, "Dr. E", 8, 16));
+        doctors.add(new Doctor(6, "Dr. F", 8, 16));
+        doctors.add(new Doctor(7, "Dr. G", 16, 23));
+        doctors.add(new Doctor(8, "Dr. H", 16, 23));
+        doctors.add(new Doctor(9, "Dr. I", 16, 23));
+        doctors.add(new Doctor(10, "Dr. J", 0, 23));
 
         //Doctor days unavailable
         doctors.getFirst().addDaysUnavailable(days[0]);
@@ -63,6 +63,12 @@ public class Driver {
             }
         }
         return max;
+    }
+
+    public void resetWeeklyWorkHour() {
+        for (Doctor doctor : doctors) {
+            doctor.weeklyWorkHour = 40;
+        }
     }
 
     public Doctor searchAvailableDoctorIterative (Day day, int start, int end) {
