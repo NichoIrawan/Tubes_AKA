@@ -9,13 +9,13 @@ public class Main {
         //Recursive
         System.out.println("===== RECURSIVE METHOD =====");
         driver.resetWeeklyWorkHour();
-        driver.setShiftRecursive(0, 0, 8);
+        driver.setShiftRecursive(0, 0, 24/Shift.values().length);
         driver.printDays();
         System.out.println();
 
         driver.doctors.get(3).addDaysUnavailable(driver.days[0]);
         driver.resetWeeklyWorkHour();
-        driver.setShiftRecursive(0, 0, 8);
+        driver.setShiftRecursive(0, 0, 24/Shift.values().length);
         driver.printDays();
         System.out.println();
 
@@ -32,8 +32,11 @@ public class Main {
         driver.printDays();
         System.out.println();
 
+        //Data Dokter
+        System.out.println("===== Doctor Data =====");
         for (Doctor doctor : driver.doctors) {
-            System.out.println(doctor);
+            System.out.print(doctor);
         }
+        System.out.println();
     }
 }

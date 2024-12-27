@@ -2,12 +2,12 @@ package com.aka;
 
 import java.util.ArrayList;
 
-
 public class Doctor {
     private final int id;
     private String name;
     protected int workHourStart;
     protected int workHourEnd;
+    protected int maxWorkHour;
     protected int weeklyWorkHour;
     protected ArrayList<Day> daysUnavailable;
     protected ArrayList<Day> shift;
@@ -17,7 +17,8 @@ public class Doctor {
         this.name = name;
         this.workHourStart = workHourStart;
         this.workHourEnd = workHourEnd;
-        this.weeklyWorkHour = 24;
+        this.maxWorkHour = 12;
+        this.weeklyWorkHour = this.maxWorkHour;
         this.daysUnavailable = new ArrayList<>();
         this.shift = new ArrayList<>();
     }
