@@ -126,6 +126,7 @@ public class Driver {
 
     }
 
+    //Time complexity pasti n => jml dokter
     public ArrayList<Doctor> groupingDoctors(Day day, int start, int end) {
         ArrayList<Doctor> doctors = new ArrayList<>();
         for (Doctor doctor : this.doctors) {
@@ -136,6 +137,7 @@ public class Driver {
         return doctors;
     }
 
+    //Time complexity pasti n => jml dokter
     public int max(ArrayList<Doctor> doctors) {
         int max = -1;
 
@@ -147,12 +149,14 @@ public class Driver {
         return max;
     }
 
+    //Time complexity pasti n => jml dokter
     public void resetWeeklyWorkHour() {
         for (Doctor doctor : doctors) {
             doctor.weeklyWorkHour = doctor.maxWorkHour;
         }
     }
 
+    //Time complexity n => worst, best, average
     public Doctor searchAvailableDoctorIterative (Day day, int start, int end) {
         ArrayList<Doctor> doctors = groupingDoctors(day, start, end);
         int max = max(doctors);
@@ -164,6 +168,7 @@ public class Driver {
         return null;
     }
 
+    //Time complexity n => worst, best, average
     public Doctor searchAvailableDoctorRecursive (Day day, ArrayList<Doctor> doctors, int doctorIndex, int start, int end, int maxWeeklyWorkHour) {
         if (doctorIndex == doctors.size()) {
             return null;
@@ -175,6 +180,7 @@ public class Driver {
         }
     }
 
+    //Time complexity pasti n^3 => 3 x for-loop
     public void setShiftIterative () {
         int workhour = 24 / Shift.values().length;
 
@@ -189,6 +195,7 @@ public class Driver {
         }
     }
 
+    //Time complexity pasti n^3 => day++, workhour++, grouping & search
     public void setShiftRecursive (int dayIndex, int start, int end) {
         int workHour = 24 / Shift.values().length;
 
@@ -210,6 +217,7 @@ public class Driver {
         }
     }
 
+    //Time complexity pasti n
     public void printDays() {
         for (Day day : days) {
             System.out.println(day);
