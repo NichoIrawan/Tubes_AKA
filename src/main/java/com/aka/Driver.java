@@ -45,8 +45,8 @@ public class Driver {
         //Doctor days unavailable
         // Doctor days unavailable
         doctors.getFirst().addDaysUnavailable(days[0]);
-        doctors.get(0).addDaysUnavailable(days[2]);
-        doctors.get(0).addDaysUnavailable(days[4]);
+        doctors.getFirst().addDaysUnavailable(days[2]);
+        doctors.getFirst().addDaysUnavailable(days[4]);
 
         doctors.get(1).addDaysUnavailable(days[1]);
         doctors.get(1).addDaysUnavailable(days[3]);
@@ -90,7 +90,7 @@ public class Driver {
 
         doctors.get(11).addDaysUnavailable(days[2]);
         doctors.get(11).addDaysUnavailable(days[0]);
-        doctors.get(11).addDaysUnavailable(days[6]);
+        doctors.get(11).addDaysUnavailable(days[3]);
 
         doctors.get(12).addDaysUnavailable(days[3]);
         doctors.get(12).addDaysUnavailable(days[1]);
@@ -109,8 +109,8 @@ public class Driver {
         doctors.get(15).addDaysUnavailable(days[2]);
 
         doctors.get(16).addDaysUnavailable(days[0]);
-        doctors.get(16).addDaysUnavailable(days[1]);
-        doctors.get(16).addDaysUnavailable(days[6]);
+        doctors.get(16).addDaysUnavailable(days[2]);
+        doctors.get(16).addDaysUnavailable(days[4]);
 
         doctors.get(17).addDaysUnavailable(days[2]);
         doctors.get(17).addDaysUnavailable(days[3]);

@@ -26,7 +26,7 @@ public class Main {
         driver.printDays();
         System.out.println();
 
-        driver.doctors.get(7).addDaysUnavailable(driver.days[1]);
+        driver.doctors.get(7).addDaysUnavailable(driver.days[2]);
         driver.resetWeeklyWorkHour();
         driver.setShiftIterative();
         driver.printDays();
