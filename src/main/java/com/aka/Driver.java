@@ -168,7 +168,7 @@ public class Driver {
         if (doctorIndex == doctors.size()) {
             return null;
         } else {
-            if (!(doctors.get(doctorIndex).daysUnavailable.contains(day)) && doctors.get(doctorIndex).workHourStart <= start && doctors.get(doctorIndex).workHourEnd >= end && doctors.get(doctorIndex).weeklyWorkHour == maxWeeklyWorkHour) {
+            if (doctors.get(doctorIndex).weeklyWorkHour == maxWeeklyWorkHour) {
                 return doctors.get(doctorIndex);
             }
             return searchAvailableDoctorRecursive(day, doctors, doctorIndex + 1, start, end, maxWeeklyWorkHour);
