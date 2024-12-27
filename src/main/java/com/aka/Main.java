@@ -22,24 +22,24 @@ public class Main {
         System.out.println();
 
         //Iterative
-//        System.out.println("===== ITERATIVE METHOD =====");
-//        driver.resetWeeklyWorkHour();
-//        driver.setShiftIterative();
-//        driver.printDays();
-//        System.out.println();
-//
-//        driver.doctors.get(7).addDaysUnavailable(driver.days[2]);
-//        driver.resetWeeklyWorkHour();
-//        driver.setShiftIterative();
-//        driver.printDays();
-//        System.out.println();
-//
-//        //Data Dokter
-//        System.out.println("===== Doctor Data =====");
-//        for (Doctor doctor : driver.doctors) {
-//            System.out.print(doctor);
-//        }
-//        System.out.println();
+        System.out.println("===== ITERATIVE METHOD =====");
+        driver.resetWeeklyWorkHour();
+        driver.setShiftIterative();
+        driver.printDays();
+        System.out.println();
+
+        driver.doctors.get(7).addDaysUnavailable(driver.days[2]);
+        driver.resetWeeklyWorkHour();
+        driver.setShiftIterative();
+        driver.printDays();
+        System.out.println();
+
+        //Data Dokter
+        System.out.println("===== Doctor Data =====");
+        for (Doctor doctor : driver.doctors) {
+            System.out.print(doctor);
+        }
+        System.out.println();
 
         long duration = (System.nanoTime() - startTime)/1000000;
         System.out.println("Total time: " + duration + " ms");
